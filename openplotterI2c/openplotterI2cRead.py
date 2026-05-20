@@ -248,10 +248,10 @@ def main():
 							else:
 								if i2c_sensors[i]['address']:
 									instances.append({'name':i,'type':'ADS1115','tick':[now,now,now,now],'sensor':i2c_sensors[i],'object':ADS11.ADS1115(muxInstances[i2c_sensors[i]['address']][i2c_sensors[i]['channel']-1])})
-							if instances[-1]['sensor']['data'][0]['SKkey']: instances[-1]['sensor']['data'][0]['object'] = AnalogIn(instances[-1]['object'], ADS11.P0)
-							if instances[-1]['sensor']['data'][1]['SKkey']: instances[-1]['sensor']['data'][1]['object'] = AnalogIn(instances[-1]['object'], ADS11.P1)
-							if instances[-1]['sensor']['data'][2]['SKkey']: instances[-1]['sensor']['data'][2]['object'] = AnalogIn(instances[-1]['object'], ADS11.P2)
-							if instances[-1]['sensor']['data'][3]['SKkey']: instances[-1]['sensor']['data'][3]['object'] = AnalogIn(instances[-1]['object'], ADS11.P3)
+							if instances[-1]['sensor']['data'][0]['SKkey']: instances[-1]['sensor']['data'][0]['object'] = AnalogIn(instances[-1]['object'], ADS11.ADS1115.P0)
+							if instances[-1]['sensor']['data'][1]['SKkey']: instances[-1]['sensor']['data'][1]['object'] = AnalogIn(instances[-1]['object'], ADS11.ADS1115.P1)
+							if instances[-1]['sensor']['data'][2]['SKkey']: instances[-1]['sensor']['data'][2]['object'] = AnalogIn(instances[-1]['object'], ADS11.ADS1115.P2)
+							if instances[-1]['sensor']['data'][3]['SKkey']: instances[-1]['sensor']['data'][3]['object'] = AnalogIn(instances[-1]['object'], ADS11.ADS1115.P3)
 
 						elif i2c_sensors[i]['type'] == 'ADS1015':
 							import adafruit_ads1x15.ads1015 as ADS10
@@ -261,10 +261,10 @@ def main():
 							else:
 								if i2c_sensors[i]['address']:
 									instances.append({'name':i,'type':'ADS1015','tick':[now,now,now,now],'sensor':i2c_sensors[i],'object':ADS10.ADS1015(muxInstances[i2c_sensors[i]['address']][i2c_sensors[i]['channel']-1])})
-							if instances[-1]['sensor']['data'][0]['SKkey']: instances[-1]['sensor']['data'][0]['object'] = AnalogIn(instances[-1]['object'], ADS10.P0)
-							if instances[-1]['sensor']['data'][1]['SKkey']: instances[-1]['sensor']['data'][1]['object'] = AnalogIn(instances[-1]['object'], ADS10.P1)
-							if instances[-1]['sensor']['data'][2]['SKkey']: instances[-1]['sensor']['data'][2]['object'] = AnalogIn(instances[-1]['object'], ADS10.P2)
-							if instances[-1]['sensor']['data'][3]['SKkey']: instances[-1]['sensor']['data'][3]['object'] = AnalogIn(instances[-1]['object'], ADS10.P3)
+							if instances[-1]['sensor']['data'][0]['SKkey']: instances[-1]['sensor']['data'][0]['object'] = AnalogIn(instances[-1]['object'], ADS10.ADS1015.P0)
+							if instances[-1]['sensor']['data'][1]['SKkey']: instances[-1]['sensor']['data'][1]['object'] = AnalogIn(instances[-1]['object'], ADS10.ADS1015.P1)
+							if instances[-1]['sensor']['data'][2]['SKkey']: instances[-1]['sensor']['data'][2]['object'] = AnalogIn(instances[-1]['object'], ADS10.ADS1015.P2)
+							if instances[-1]['sensor']['data'][3]['SKkey']: instances[-1]['sensor']['data'][3]['object'] = AnalogIn(instances[-1]['object'], ADS10.ADS1015.P3)
 
 						gain = 1
 						if 'sensorSettings' in instances[-1]['sensor']:
